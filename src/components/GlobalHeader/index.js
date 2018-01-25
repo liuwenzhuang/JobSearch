@@ -79,48 +79,33 @@ export default class GlobalHeader extends PureComponent {
             <Divider type="vertical" key="line" />,
           ]
         )}
+        <div className={styles.left}>
+          <Link to="/" className={styles.logo} key="logo">
+            <img src={logo} alt="logo" width="32" />
+          </Link>
+          <Link to="/searchJobs" className={styles.action}>
+            Search Jobs
+          </Link>
+          <Link to="/blog" className={styles.action}>
+            Blog
+          </Link>
+          <Link to="/about" className={styles.action}>
+            About
+          </Link>
+        </div>
         <div className={styles.right}>
-          <HeaderSearch
-            className={`${styles.action} ${styles.search}`}
-            placeholder="站内搜索"
-            dataSource={['搜索提示一', '搜索提示二', '搜索提示三']}
-            onSearch={(value) => {
-              console.log('input', value); // eslint-disable-line
-            }}
-            onPressEnter={(value) => {
-              console.log('enter', value); // eslint-disable-line
-            }}
-          />
-          <NoticeIcon
-            className={styles.action}
-            count={currentUser.notifyCount}
-            onItemClick={(item, tabProps) => {
-              console.log(item, tabProps); // eslint-disable-line
-            }}
-            onClear={onNoticeClear}
-            onPopupVisibleChange={onNoticeVisibleChange}
-            loading={fetchingNotices}
-            popupAlign={{ offset: [20, -16] }}
-          >
-            <NoticeIcon.Tab
-              list={noticeData['通知']}
-              title="通知"
-              emptyText="你已查看所有通知"
-              emptyImage="https://gw.alipayobjects.com/zos/rmsportal/wAhyIChODzsoKIOBHcBk.svg"
-            />
-            <NoticeIcon.Tab
-              list={noticeData['消息']}
-              title="消息"
-              emptyText="您已读完所有消息"
-              emptyImage="https://gw.alipayobjects.com/zos/rmsportal/sAuJeJzSKbUmHfBQRzmZ.svg"
-            />
-            <NoticeIcon.Tab
-              list={noticeData['待办']}
-              title="待办"
-              emptyText="你已完成所有待办"
-              emptyImage="https://gw.alipayobjects.com/zos/rmsportal/HsIsxMZiWKrNUavQUXqx.svg"
-            />
-          </NoticeIcon>
+          <Link to="/candidates" className={styles.action}>
+            Candidates
+          </Link>
+          <Link to="/employers" className={styles.action}>
+            Employers
+          </Link>
+          <Link to="/signIn" className={styles.action}>
+            Sign In
+          </Link>
+          <Link to="/signUp" className={styles.action}>
+            Sign Up
+          </Link>
           {currentUser.name ? (
             <Dropdown overlay={menu}>
               <span className={`${styles.action} ${styles.account}`}>

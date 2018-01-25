@@ -2,9 +2,14 @@
 
 .header {
   padding: 0 12px 0 0;
-  background: #fff;
-  box-shadow: 0 1px 4px rgba(0, 21, 41, .08);
-  position: relative;
+  background: transparent;
+  //box-shadow: 0 1px 4px rgba(0, 21, 41, .08);
+  z-index: 200;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
 }
 
 :global {
@@ -45,6 +50,19 @@ i.trigger {
   &:hover {
     background: @primary-1;
   }
+}
+
+.left {
+  float: left;
+  height: 100%;
+}
+
+.action {
+  cursor: pointer;
+  color: #fff;
+  padding: 0 12px;
+  display: inline-block;
+  height: 100%;
 }
 
 .right {

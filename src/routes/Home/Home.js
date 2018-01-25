@@ -1,36 +1,25 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import {Icon, Button} from 'antd'
 import ImageGallery from 'react-image-gallery';
 import styles from './Home.less';
+import 'react-image-gallery/styles/css/image-gallery-no-icon.css';
+import PageHeader from "../../components/PageHeader/index";
+import Navigation from "../../components/Navigation/Navigation";
 
 export default class Home extends Component {
-  state = {
-
-  };
+  state = {};
 
   render() {
-    const images = [
-      {
-        original: 'https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/3.jpg',
-        thumbnail: 'https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/3.jpg',
-      },
-      {
-        original: 'https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/2.jpg',
-        thumbnail: 'https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/2.jpg'
-      },
-      {
-        original: 'https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/1.jpg',
-        thumbnail: 'https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/1.jpg'
-      }
-    ];
-    return (
-      <div className={styles.home}>
-        <ImageGallery
-          items={images}
-          showPlayButton={false}
-          showFullscreenButton={false}
-          showThumbnails={false}
-        />
+
+    const content = (
+      <div className="imgContainer">
+        <img style={{width: '100%'}} alt="" src="https://gw.alipayobjects.com/zos/rmsportal/RzwpdLnhmvDJToTdfDPe.png"/>
       </div>
     );
+    return (
+      <Navigation
+        content={content}
+        bgImg
+      />);
   }
 }

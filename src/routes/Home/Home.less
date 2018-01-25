@@ -1,7 +1,28 @@
 @import "../../utils/utils.less";
 @import "~antd/lib/style/themes/default.less";
-:global {
-  @import "../../../node_modules/react-image-gallery/styles/css/image-gallery.css";
+
+.imageNav {
+  color: #fff;
+  position: absolute;
+  font-size: 5em;
+  padding: 50px 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+  z-index: 4;
+}
+
+.imageGalleryCustomLeftNav {
+  composes: imageNav;
+  left: 0;
+}
+
+.imageGalleryCustomRightNav {
+  composes: imageNav;
+  right: 0;
 }
 
 /*
